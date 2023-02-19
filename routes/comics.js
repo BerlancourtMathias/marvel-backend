@@ -4,6 +4,10 @@ const router = express.Router();
 const cors = require("cors");
 const morgan = require("morgan");
 
+app.use(express.json());
+app.use(cors());
+app.use(morgan("dev"));
+
 router.get("/comics", async (req, res) => {
   const skip = req.query.skip || "0";
   const limit = req.query.limit || "100";
