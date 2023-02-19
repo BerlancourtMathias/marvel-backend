@@ -15,7 +15,8 @@ router.get("/characters", async (req, res) => {
 
   try {
     const response = await axios.get(
-      `${process.env.API_URL}/characters?apiKey=${process.env.API_KEY}&skip=${skip}&limit=${limit}&name=${name}`
+      `${process.env.API_URL}/characters?apiKey=${process.env.API_KEY}&skip=${skip}&limit=${limit}&name=${name}`,
+      { mode: "cors" }
     );
     res.status(200).json(response.data);
   } catch (error) {
