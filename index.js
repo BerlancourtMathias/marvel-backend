@@ -22,6 +22,10 @@ app.get("/", async (req, res) => {
   res.status(200).json({ message: "connexion ok ✔️" });
 });
 
+app.all("*", (req, res) => {
+  res.status(404).json({ message: "Cette route n'existe pas" });
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`started`);
 });
