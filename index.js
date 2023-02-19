@@ -10,6 +10,14 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
+//Routes import
+const characterRoutes = require("./routes/character");
+const comicsRoutes = require("./routes/comics");
+
+//Use of routes by the server
+app.use(characterRoutes);
+app.use(comicsRoutes);
+
 app.get("/", async (req, res) => {
   res.status(200).json({ message: "connexion ok ✔️" });
 });
