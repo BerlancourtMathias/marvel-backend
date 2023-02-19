@@ -1,6 +1,8 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
+const cors = require("cors");
+const morgan = require("morgan");
 
 router.get("/comics", async (req, res) => {
   const skip = req.query.skip || "0";
