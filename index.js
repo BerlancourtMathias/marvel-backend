@@ -19,11 +19,11 @@ app.use(characterRoutes);
 app.use(comicsRoutes);
 
 //Checks
-console.log(
-  `example of the complete route /comics url to the API : ${process.env.API_URL}/comics?apiKey=${process.env.API_KEY}`
-);
-console.log("process.env.API_URL", process.env.API_URL);
-console.log("process.env.PORT:", process.env.PORT);
+// console.log(
+//   `example of the complete route /comics url to the API : ${process.env.API_URL}/comics?apiKey=${process.env.API_KEY}`
+// );
+// console.log("process.env.API_URL", process.env.API_URL);
+// console.log("process.env.PORT:", process.env.PORT);
 
 app.get("/comics", async (req, res) => {
   console.log(req.query);
